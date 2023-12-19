@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Work</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="back-img"></div>
+      <div id="container" class="container">
+        <div id="login_form" class="login-form">
+          <div class="header">
+            <h3>Sign In</h3>
+            <p>Login To Your Account</p>
+          </div>
+          <form class="form-content" action="">
+            <div class="user-name input-field">
+              <i class="fa fa-envelope icon"></i>
+              <input type="email" name="mail" id="user" autofocus/>
+              <label for="user">Email</label>
+            </div>
+            <div class="password input-field">
+              <i class="fa fa-lock icon"></i>
+              <input type="password" name="pass" id="pass" required />
+              <label for="pass">Password</label>
+              <i
+                id="show_pass_icon"
+                class="fa fa-eye"
+                onclick="showPassword()"
+              ></i>
+            </div>
+            <div class="forget-btn">
+              <button class="btn">Forget Password?</button>
+            </div>
+            <input id="submit_btn" type="submit" value="Login" />
+          </form>
+        </div>
+        <div id="register_form" class="login-form hide">
+          <div class="header">
+            <h3>Sign Up</h3>
+            <p>Create Your Account</p>
+          </div>
+          <form class="form-content" action="">
+            <div class="user-name input-field">
+              <i class="fa fa-id-card-o"></i>
+              <input type="text" name="first" id="first_name" required autofocus/>
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="user-name input-field">
+              <i class="fa fa-id-card"></i>
+              <input type="text" name="last" id="last_name" required />
+              <label for="last_name">Last Name</label>
+            </div>
+            <div class="user-name input-field">
+              <i class="fa fa-envelope icon"></i>
+              <input type="email" name="email" id="mail" required />
+              <label for="mail">Email</label>
+            </div>
+            <div class="password input-field">
+              <i class="fa fa-lock icon"></i>
+              <input type="password" name="password" id="password" required />
+              <label for="password">Password</label>
+              <i
+                id="show_pass_icon"
+                class="fa fa-eye"
+                onclick="showPassword()"
+              ></i>
+            </div>
+            <div class="password input-field">
+              <i class="fa fa-lock icon"></i>
+              <input type="password" name="repass" id="re_password" required />
+              <label for="re_password">Repeat password</label>
+              <i
+                id="show_pass_icon"
+                class="fa fa-eye"
+                onclick="showPassword()"
+              ></i>
+            </div>
+            <input id="create_btn" type="submit" value="Create" />
+          </form>
+        </div>
+        <div class="no-acc">
+          <p id="have_acc_p">Don't Have An Account ?</p>
+          <button class="btn" onclick="whichPage(this)">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
