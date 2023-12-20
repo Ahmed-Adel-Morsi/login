@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Work</title>
+    <title>Form</title>
   </head>
   <body>
     <div class="page">
@@ -28,23 +28,43 @@
           <form class="form-content" action="">
             <div class="user-name input-field">
               <i class="fa fa-envelope icon"></i>
-              <input type="email" name="mail" id="user" autofocus/>
+              <input
+                type="email"
+                name="mail"
+                id="user"
+                onblur="isEmpty(this)"
+                oninput="resetBorder(this); loginFormValidation(this);"
+                onfocus="clearAlert()"
+                required
+                autofocus
+              />
               <label for="user">Email</label>
             </div>
             <div class="password input-field">
               <i class="fa fa-lock icon"></i>
-              <input type="password" name="pass" id="pass" required />
+              <input
+                type="password"
+                name="pass"
+                id="pass"
+                onblur="isEmpty(this)"
+                oninput="resetBorder(this); loginFormValidation(this);"
+                onfocus="clearAlert()"
+                required
+              />
               <label for="pass">Password</label>
               <i
-                id="show_pass_icon"
                 class="fa fa-eye"
-                onclick="showPassword()"
+                onclick="showPassword(this)"
               ></i>
             </div>
             <div class="forget-btn">
-              <button class="btn">Forget Password?</button>
+              <a class="btn" onclick="handleResetingPassword(event)"
+                >Forget Password?</a
+              >
             </div>
-            <input id="submit_btn" type="submit" value="Login" />
+            <p class="alert" id="alert"></p>
+            <input type="hidden" name="from" value="login" />
+            <input id="submit_btn" type="submit" value="Login" disabled />
           </form>
         </div>
         <div id="register_form" class="login-form hide">
@@ -55,45 +75,88 @@
           <form class="form-content" action="">
             <div class="user-name input-field">
               <i class="fa fa-id-card-o"></i>
-              <input type="text" name="first" id="first_name" required autofocus/>
+              <input
+                type="text"
+                name="first"
+                onblur="isEmpty(this)"
+                oninput="resetBorder(this); registerFormValidation(this);"
+                onfocus="clearAlert()"
+                id="first_name"
+                required
+                autofocus
+              />
               <label for="first_name">First Name</label>
             </div>
             <div class="user-name input-field">
               <i class="fa fa-id-card"></i>
-              <input type="text" name="last" id="last_name" required />
+              <input
+                type="text"
+                name="last"
+                onblur="isEmpty(this)"
+                oninput="resetBorder(this); registerFormValidation(this);"
+                onfocus="clearAlert()"
+                id="last_name"
+                required
+              />
               <label for="last_name">Last Name</label>
             </div>
             <div class="user-name input-field">
               <i class="fa fa-envelope icon"></i>
-              <input type="email" name="email" id="mail" required />
+              <input
+                type="email"
+                name="email"
+                onblur="isEmpty(this)"
+                oninput="resetBorder(this); registerFormValidation(this);"
+                onfocus="clearAlert()"
+                id="mail"
+                required
+              />
               <label for="mail">Email</label>
             </div>
             <div class="password input-field">
               <i class="fa fa-lock icon"></i>
-              <input type="password" name="password" id="password" required />
+              <input
+                type="password"
+                name="password"
+                onblur="isEmpty(this)"
+                oninput="resetBorder(this); registerFormValidation(this);"
+                onfocus="clearAlert()"
+                id="password"
+                required
+              />
               <label for="password">Password</label>
               <i
-                id="show_pass_icon"
+                id="toggle_pass_icon"
                 class="fa fa-eye"
-                onclick="showPassword()"
+                onclick="showPassword(this)"
               ></i>
             </div>
             <div class="password input-field">
               <i class="fa fa-lock icon"></i>
-              <input type="password" name="repass" id="re_password" required />
+              <input
+                type="password"
+                name="repass"
+                id="re_password"
+                onblur="isEmpty(this)"
+                oninput="registerFormValidation(this);"
+                onfocus="clearAlert()"
+                required
+              />
               <label for="re_password">Repeat password</label>
               <i
-                id="show_pass_icon"
+                id="toggle_reg_pass_icon"
                 class="fa fa-eye"
-                onclick="showPassword()"
+                onclick="showPassword(this)"
               ></i>
             </div>
-            <input id="create_btn" type="submit" value="Create" />
+            <p class="alert" id="reg_alert"></p>
+            <input type="hidden" id="reg_hidden" name="from" value="register" />
+            <input id="create_btn" type="submit" value="Create" disabled />
           </form>
         </div>
-        <div class="no-acc">
+        <div id="have_acc_container" class="no-acc">
           <p id="have_acc_p">Don't Have An Account ?</p>
-          <button class="btn" onclick="whichPage(this)">Sign Up</button>
+          <a class="btn" onclick="whichPage(this)">Sign Up</a>
         </div>
       </div>
     </div>

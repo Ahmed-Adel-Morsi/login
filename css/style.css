@@ -4,6 +4,8 @@
   margin: 0;
   transition: 0.3s ease-in-out;
   letter-spacing: 1px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: bold;
 }
 :root {
   --main-color: darkslategray;
@@ -114,13 +116,22 @@ h3 {
   font-size: 15px;
   letter-spacing: initial;
 }
-.form-content button {
+.form-content a {
   float: right;
   margin-top: 5px;
+  text-decoration: none;
 }
 .btn:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+.alert {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  height: 30px;
+  margin-top: 15px;
 }
 input[type="submit"] {
   padding: 15px 45px;
@@ -129,7 +140,7 @@ input[type="submit"] {
   background-color: var(--main-color);
   color: white;
   font-size: 20px;
-  margin-top: 50px;
+  margin-top: 5px;
 }
 input[type="submit"]:hover {
   cursor: pointer;
@@ -171,4 +182,15 @@ input[type="submit"]:hover {
   .no-acc {
     margin: 10px 0;
   }
+}
+input[type="submit"]:disabled {
+  opacity: 0.8;
+}
+input[type="submit"]:disabled:hover {
+  cursor: not-allowed;
+  background-color: var(--main-color);
+}
+::selection {
+  background-color: var(--main-color);
+  color: white;
 }
