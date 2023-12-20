@@ -45,10 +45,11 @@ submitBtn.addEventListener("click", function (event) {
   if (!validateEmail(email.value)) {
     alert.innerHTML = "Invalid Email!";
     email.style = "border-color:red;";
+  } else {
+    loginForm.innerHTML =
+      "<center>المعلومات دى مش مزبوطه يا صاحبى بس انا هسيبك تدخل جدعنه منى يعنى</center>";
+    haveAccContainer.classList.add("hide");
   }
-  loginForm.innerHTML =
-    "<center>المعلومات دى مش مزبوطه يا صاحبى بس انا هسيبك تدخل جدعنه منى يعنى</center>";
-  haveAccContainer.classList.add("hide");
 });
 
 // Register Form Methods
