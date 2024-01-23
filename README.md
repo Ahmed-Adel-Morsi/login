@@ -10,7 +10,6 @@ Welcome to the Login Template repository, a straightforward and responsive templ
 - [Usage](#usage)
 - [Customization](#customization)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
